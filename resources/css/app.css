@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+/* Minimal Tailwind-only helpers for forms, table, menu and pagination */
+
+/* Form card (centered + encadré) */
+.form-card {
+  @apply mx-auto max-w-xl bg-white border border-gray-200 rounded-lg p-6 shadow-sm;
+}
+
+/* Back button used on show pages */
+.back-btn {
+  @apply inline-flex items-center text-sm text-gray-600 hover:text-gray-800 mb-4;
+}
+
+/* Table visuals for JS-rendered table (.tbl used by tableau.js) */
+.tbl {
+  @apply w-full border-collapse;
+}
+.tbl thead th {
+  @apply text-left text-sm font-medium text-gray-700 px-4 py-2;
+}
+.tbl tbody tr {
+  @apply bg-white border-b border-gray-100;
+}
+.tbl tbody td {
+  @apply px-4 py-3 text-sm text-gray-700 align-top;
+}
+.tbl .no-data td {
+  @apply text-center text-gray-500 py-8;
+}
+
+/* Table container placeholder */
+.table-wrapper {
+  @apply bg-white rounded-lg border border-gray-100 p-4 shadow-sm min-h-[110px];
+}
+.table-wrapper.empty {
+  @apply bg-transparent border-transparent text-gray-500 flex items-center justify-center;
+}
+
+/* Loader (tailwind classes used in blade, keep .hidden utility) */
+.hidden { display: none !important; }
+
+/* Menu hero tweaks */
+.menu-hero {
+  @apply rounded-2xl overflow-hidden shadow-md bg-white border border-gray-100;
+}
+.menu-hero__content {
+  @apply relative z-10 text-center p-8 sm:p-12 text-gray-900;
+}
+.menu-hero__actions > a {
+  @apply inline-flex items-center px-4 py-2 rounded-md font-semibold;
+}
+
+/* Pagination override (Laravel links output) */
+.pagination {
+  @apply flex flex-wrap gap-2 justify-end mt-4 list-none p-0;
+}
+.pagination a, .pagination span {
+  @apply px-3 py-1 rounded-md text-sm border border-gray-200 bg-white text-gray-700;
+}
+.pagination .active {
+  @apply bg-indigo-600 text-white border-indigo-600 font-semibold;
+}
+
+/* Form actions (submit + cancel) */
+.form-actions {
+  @apply flex gap-3 mt-6;
+}
+@media (max-width: 640px) {
+  .form-actions { @apply flex-col; }
+  .form-actions > * { @apply w-full; }
+}
+
+/* Flash badge */
+.pastille {
+  @apply fixed top-5 right-5 bg-green-600 text-white px-3 py-2 rounded-md shadow-md z-50;
+  animation: fadeOut 3s forwards;
+}
+@keyframes fadeOut { to { opacity: 0; } }
+
+/* Menu hero helpers */
+.menu-hero { @apply relative overflow-hidden rounded-2xl shadow-lg bg-white; }
+.menu-hero__bg { @apply absolute inset-0 bg-center bg-cover; filter: saturate(1) brightness(0.92); }
+.menu-hero__overlay { @apply absolute inset-0 bg-gradient-to-b from-black/20 to-white/10; }
+.menu-hero__content { @apply relative z-10 text-center p-8 sm:p-12 text-gray-900; }
+.menu-hero__actions { @apply flex flex-wrap gap-3 justify-center mt-4; }
+
+/* Buttons */
+.btn { @apply inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold transition-all; }
+.btn--primary { @apply bg-indigo-600 text-white hover:bg-indigo-700; }
+.btn--secondary { @apply bg-gray-200 text-gray-800 hover:bg-gray-300; }
+.btn--ghost { @apply bg-white border border-gray-300 text-gray-800 hover:bg-gray-50; }
+
+/* Card component */
+.card { @apply bg-white rounded-lg border border-gray-200 shadow-sm p-4 flex items-center justify-between gap-4; }
+.card .highlight { @apply border-l-4 border-l-red-500; }
+
+/* Forms */
+form { @apply max-w-2xl space-y-5; }
+form h2 { @apply text-2xl font-bold text-gray-900 mb-6; }
+form label { @apply block text-sm font-medium text-gray-700 mb-1.5; }
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select,
+form textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-800;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent;
+}
+form button { @apply px-4 py-2 rounded-md font-semibold transition-all; }
+
+/* Form actions (submit + cancel buttons) */
+.form-actions { @apply flex gap-3 mt-8; }
+
+/* Validation errors */
+.form-errors { @apply mt-4 bg-red-50 border border-red-200 rounded-lg p-4; }
+.form-errors ul { @apply list-none m-0 p-0; }
+.form-errors li { @apply text-red-700 text-sm my-1; }
+
+/* Pagination — override Laravel default styling */
+.pagination { @apply flex flex-wrap gap-2 justify-end mt-6; list-style: none; padding: 0; margin: 0; }
+.pagination a,
+.pagination span {
+  @apply px-3 py-2 rounded-md text-sm border border-gray-300 bg-white text-gray-700;
+  @apply hover:bg-gray-50 transition-all;
+}
+.pagination .active {
+  @apply bg-indigo-600 text-white border-indigo-600 font-semibold;
+}
+.pagination a.disabled,
+.pagination span.disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .menu-hero__content { @apply p-6; }
+  .form-actions { @apply flex-col; }
+  .form-actions button,
+  .form-actions a { @apply w-full text-center; }
+}
