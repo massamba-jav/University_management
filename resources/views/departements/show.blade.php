@@ -6,7 +6,7 @@
 
     <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm mb-4">
       <p><strong>Nom :</strong> {{ $departement->nom }}</p>
-      <p><strong>Capacité :</strong> {{ $departement->capacite }} h</p>
+      <p><strong>Capacité :</strong> {{ $departement->capacite }} </p>
     </div>
 
     <div class="flex gap-3">
