@@ -7,7 +7,6 @@ use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\ProfesseurController;
 use App\Http\Controllers\TableauController;
 
-
 Route::get('/', function () {
     return view('menu');
 });
@@ -49,7 +48,5 @@ Route::put('/professeurs/{professeur}', [ProfesseurController::class, 'update'])
 Route::delete('/professeurs/{professeur}', [ProfesseurController::class, 'destroy'])->name('professeurs.destroy');
 
 // Tableau Routes
-Route::get('/tableau', function () {
-    return view('tableau');
-})->name('tableau');
-Route::get('/tables', [TableauController::class, 'index'])->name('tables.index');
+Route::get('/tableau', [TableauController::class, 'index'])->name('tableau.index');
+Route::get('/tableau/{type}', [TableauController::class, 'show'])->name('tableau.show');
