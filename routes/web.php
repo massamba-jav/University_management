@@ -53,3 +53,8 @@ Route::get('/tableau', function () {
     return view('tableau');
 })->name('tableau');
 Route::get('/tables', [TableauController::class, 'index'])->name('tables.index');
+
+// Route pour retourner à la page précédente
+Route::get('/back', function () {
+    return redirect()->back();
+})->name('back');
