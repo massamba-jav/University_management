@@ -17,7 +17,7 @@
                 <li><a href="{{ route('departements.index') }}" class="text-gray-700 hover:text-indigo-600">Départements</a></li>
                 <li><a href="{{ route('professeurs.index') }}" class="text-gray-700 hover:text-indigo-600">Professeurs</a></li>
                 <li><a href="{{ route('etudiants.index') }}" class="text-gray-700 hover:text-indigo-600">Étudiants</a></li>
-                <li><a href="{{ route('tableau') }}" class="text-gray-700 hover:text-indigo-600">Tableaux</a></li>
+                <li><a href="{{ route('tables.index') }}" class="text-gray-700 hover:text-indigo-600">Tableaux</a></li>
             </ul>
         </nav>
     </header>

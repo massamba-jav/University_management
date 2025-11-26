@@ -24,7 +24,7 @@
             <a href="{{ route('departements.index') }}" class="btn btn--ghost inline-flex items-center px-4 py-2 rounded-md">Départements</a>
             <a href="{{ route('professeurs.index') }}" class="btn btn--ghost inline-flex items-center px-4 py-2 rounded-md">Professeurs</a>
             <a href="{{ route('etudiants.index') }}" class="btn btn--ghost inline-flex items-center px-4 py-2 rounded-md">Étudiants</a>
-            <a href="{{ route('tableau') }}" class="btn inline-flex items-center px-4 py-2 rounded-md border border-indigo-200 text-indigo-700">Tableaux dynamiques</a>
+            <a href="{{ route('tables.index') }}" class="btn inline-flex items-center px-4 py-2 rounded-md border border-indigo-200 text-indigo-700">Tableaux dynamiques</a>
             </div>
         </div>
         </section>

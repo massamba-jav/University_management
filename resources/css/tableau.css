@@ -6,3 +6,7 @@
 .table-heading h2 { margin: 0 0 12px; }
 .pagination { display: flex; justify-content: center; gap: 8px; }
 .highlight { background-color: #fffbdd; }
+
+/* Actions */
+.tbl td.actions { white-space: nowrap; }
+.tbl td.actions .btn { padding: 4px 8px; font-size: 0.85rem; }

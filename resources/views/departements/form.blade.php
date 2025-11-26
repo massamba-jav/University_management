@@ -26,7 +26,7 @@
 
       <div class="form-actions">
         <button type="submit" class="inline-flex items-center px-4 py-2 rounded-md bg-indigo-600 text-white font-semibold">Enregistrer</button>
-        <a href="{{ route('departements.index') }}" class="inline-flex items-center px-4 py-2 rounded-md bg-gray-100 text-gray-800">Annuler</a>
+        <a href="{{ route('back') }}" class="inline-flex items-center px-4 py-2 rounded-md bg-gray-100 text-gray-800">Annuler</a>
       </div>
     </form>
   </div>
